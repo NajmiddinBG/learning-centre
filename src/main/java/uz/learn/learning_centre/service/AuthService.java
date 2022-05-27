@@ -117,7 +117,7 @@ public class AuthService implements UserDetailsService, BaseService {
 
                 //creates new access token
                 String access_token = JWT.create()
-                        .withSubject(user.getUsername())
+                        .withSubject(user.getPhoneNumber())
                         .withExpiresAt(JwtUtils.getExpiry())
                         .withIssuer(request.getRequestURL().toString())
                         .withClaim("roles", Collections.singletonList(user.getRole().name()))
@@ -158,15 +158,15 @@ public class AuthService implements UserDetailsService, BaseService {
 
     public AuthUser getUserByPhone(String phone) {
         log.info("Getting user by phone : {}", phone);
-        return repository.findAuthUserByUsername(phone);
+        return repository.findAuthUserByPhoneNumber(phone);
     }
 
 
     @Override
     public UserDetails loadUserByUsername(String phone) throws UsernameNotFoundException {
-        AuthUser user = repository.findAuthUserByUsername(phone);
+        AuthUser user = repository.findAuthUserByPhoneNumber(phone);
         return User.builder()
-                .username(user.getUsername())
+                .username(user.getPhoneNumber())
                 .password(user.getPassword())
                 .authorities(Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole().name())))
                 .build();

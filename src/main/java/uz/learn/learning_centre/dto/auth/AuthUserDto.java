@@ -10,7 +10,7 @@ import uz.learn.learning_centre.enums.AuthRole;
 @Setter
 public class AuthUserDto extends GenericDto {
     private String fullName;
-    private String username;
+    private String phoneNumber;
     private Short experienceYear;
     private AuthRole role;
     private Double salary;

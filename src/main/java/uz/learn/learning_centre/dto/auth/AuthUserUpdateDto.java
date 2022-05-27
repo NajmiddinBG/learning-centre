@@ -5,14 +5,12 @@ import lombok.Setter;
 import uz.learn.learning_centre.dto.base.GenericDto;
 import uz.learn.learning_centre.enums.AuthRole;
 
-import java.util.List;
-
 @Getter
 @Setter
 public class AuthUserUpdateDto extends GenericDto {
     private String fullName;
 
-    private String username;
+    private String phoneNumber;
 
     private String password;
 

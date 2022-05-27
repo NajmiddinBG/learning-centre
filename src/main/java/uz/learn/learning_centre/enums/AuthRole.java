@@ -20,7 +20,8 @@ public enum AuthRole {
     TEACHER(5),
     ACCOUNTANT(5),
     ASSISTANT(5),
-    RECEPTIONIST(5);
+    RECEPTIONIST(5),
+    STUDENT(1);
 
     private final int degree;
 

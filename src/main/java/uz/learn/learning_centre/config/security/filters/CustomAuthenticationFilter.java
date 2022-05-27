@@ -40,9 +40,9 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         try {
             LoginDto loginDto = new ObjectMapper().readValue(request.getReader(), LoginDto.class);
-            log.info("Username is: {}", loginDto.getUsername());
+            log.info("Username is: {}", loginDto.getPhoneNumber());
             UsernamePasswordAuthenticationToken authenticationToken =
-                    new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword());
+                    new UsernamePasswordAuthenticationToken(loginDto.getPhoneNumber(), loginDto.getPassword());
             return authenticationManager.authenticate(authenticationToken);
         } catch (IOException e) {
             log.error(e.getMessage(), e);

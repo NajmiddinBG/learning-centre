@@ -19,7 +19,7 @@ public class AuthUser extends Auditable implements BaseEntity {
     private String fullName;
 
     @Column(nullable = false)
-    private String username;
+    private String phoneNumber;
 
     @Column(nullable = false)
     private String password;
@@ -32,5 +32,8 @@ public class AuthUser extends Auditable implements BaseEntity {
 
     @Column
     private Double salary;
+
+    @ManyToOne
+    private Organization organization;
 
 }

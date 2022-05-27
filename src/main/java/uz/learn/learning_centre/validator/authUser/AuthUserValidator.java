@@ -26,7 +26,7 @@ public class AuthUserValidator implements GenericValidator<AuthUser, AuthUserDto
         if (Objects.isNull(authUserCreateDto.getPassword())) {
             throw new BadRequestException("PASSWORD IS NULL");
         }
-        if (Objects.isNull(authUserCreateDto.getUsername())) {
+        if (Objects.isNull(authUserCreateDto.getPhoneNumber())) {
             throw new BadRequestException("PASSWORD IS NULL");
         }
         if (Objects.isNull(authUserCreateDto.getRole())) {

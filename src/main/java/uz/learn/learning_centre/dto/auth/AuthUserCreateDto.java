@@ -18,11 +18,9 @@ public class AuthUserCreateDto implements BaseDto {
 
     private String fullName;
 
-    private String username;
+    private String phoneNumber;
 
     private String password;
-
-    private List<Long> subjects = Collections.emptyList();
 
     private AuthRole role;
 
